@@ -1,12 +1,12 @@
 function fetchEvents() {
-    fetch("http://zuzannadzialowska.com/wordpress/wp-json/wp/v2/events")
+    fetch("http://zuzannadzialowska.com/wordpress/wp-json/wp/v2/events?_embed&categories=7,8,9,10")
         .then(e => e.json())
         .then(showEvents)
 }
 
 function showEvents(data) {
     console.log(data);
-    data.forEach(showSingleEvent)
+    data.forEach(showSingleEvent);
 }
 
 function showSingleEvent(anEvent) {
@@ -16,9 +16,11 @@ function showSingleEvent(anEvent) {
 
     clone.querySelector("h1").textContent = anEvent.title.rendered;
     clone.querySelector(".descript").innerHTML = anEvent.content.rendered;
-    clone.querySelector(".price").textContent = anEvent.acf.price;
+    clone.querySelector(".price span").textContent = anEvent.acf.price;
     clone.querySelector(".color").style.background = anEvent.acf.color;
-
+    clone.querySelector("img").setAttribute("src", anEvent._embedded["wp.featuredmedia"][0].media_details.sizes.medium.source_url);
+    
+  
 
     let eventlist = document.querySelector("#eventlist");
     eventlist.appendChild(clone);
