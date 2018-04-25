@@ -18,9 +18,14 @@ function showSingleEvent(anEvent) {
     clone.querySelector(".descript").innerHTML = anEvent.content.rendered;
     clone.querySelector(".price span").textContent = anEvent.acf.price;
     clone.querySelector(".color").style.background = anEvent.acf.color;
-    clone.querySelector("img").setAttribute("src", anEvent._embedded["wp.featuredmedia"][0].media_details.sizes.medium.source_url);
-    
-  
+    if (anEvent._embedded["wp:featuredmedia"]) { //img is there
+        clone.querySelector("img").setAttribute("src", anEvent._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url)
+
+    } else { //no img
+        clone.querySelector(".event-pic").remove();
+    }
+
+
 
     let eventlist = document.querySelector("#eventlist");
     eventlist.appendChild(clone);
