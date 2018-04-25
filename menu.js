@@ -13,7 +13,7 @@ window.addEventListener('load',()=>{
     menu.classList.toggle("hidden");
   }
 
-  fetch("https://t7.kea-alt-del.dk/wp-json/wp/v2/categories")
+  fetch("http://zuzannadzialowska.com/wordpress/wp-json/wp/v2/categories")
     .then(e=>e.json())
     .then(buildMenu)
 
@@ -32,13 +32,4 @@ window.addEventListener('load',()=>{
 
     })
   }
-
-
-
-
-
-
-
-
-
 });

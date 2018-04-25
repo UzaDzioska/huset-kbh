@@ -6,8 +6,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   <header class="appbar">
+    <svg class="menuIcon" viewBox="0 0 100 100">
+      <rect class="myrect" x="10" y="10" width="80" height="10" rx="5" ry="5"/>
+      <rect class="myrect" x="10" y="30" width="80" height="10" rx="5" ry="5"/>
+      <rect class="myrect" x="10" y="50" width="80" height="10" rx="5" ry="5"/>
+    </svg>
+  </header>
+  
+  <aside class="menu hidden">
+    <ul>
 
-   <div class="mui-container-fluid">
+    </ul>
+  </aside>
+
+   <div class="container-fluid">
 
    <h1>Huset-KBH</h1>
     <section id="eventlist">
@@ -15,14 +28,18 @@
           <article class="event">
            <h1>TITLE</h1>
            <img src="" alt="">
-           <h2 class="price">$<span>PRICE</span></h2>
-           <div class="color"></div>
+           <h2 class="price"><span>PRICE</span>kr</h2>
+           <div class="date">DATE</div>
+           <div class="date">LOCATION</div>
+           <div class="date">TIME</div>
            <div class="descript">DESC GOES HERE</div>
+           <p><a class="readmore" href="subpage.html?id=1">Read more</a></p>
        </article>
        </template>
     </section>
     </div>
 
     <script src="main.js"></script>
+    <script src="menu.js"></script>
 </body>
 </html>
