@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
 :root {
   --header-height: 80px;
 }
@@ -6,18 +8,13 @@
 }
 html, body {
   margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 .event {
-  border: 1px solid #888888;
   padding: 1.5em;
   margin: 1em;
-  box-shadow: 2px 3px rgba(0,0,0,0.3);
 }
-.event .color {
-  width: 100px;
-  height: 100px;
-  background: yellow;
-}
+
 .appbar {
   width: 100vw;
   height: var(--header-height);
@@ -25,7 +22,7 @@ html, body {
   left:0;
 }
 .appbar, .menu {
-  background: teal;
+  background: #3A3434;
   padding: 1em;
   position: fixed;
 }

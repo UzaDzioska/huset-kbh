@@ -8,26 +8,31 @@ let lookingForData = false;
 function fetchEvents() {
     lookingForData = true;
 
-    fetch("http://zuzannadzialowska.com/wordpress/wp-json/wp/v2/events?_embed&per_page=2&categories=7,8,9,10&order=asc&page=" + page)
+    fetch("http://zuzannadzialowska.com/wordpress/wp-json/wp/v2/events?_embed&per_page=2&categories=7,8,9,10,22&order=asc&page=" + page)
         .then(e => e.json())
         .then(showEvents)
 }
 
 function showEvents(data) {
-    //console.log(data);
+    console.log(data);
     lookingForData = false;
-    data.forEach(showSingleEvent);
+    if (Array.isArray(data)){
+        data.forEach(showSingleEvent);
+    } else {
+        lookingForData = true;
+    }
+    
 }
 
 function showSingleEvent(anEvent) {
     let clone = template.cloneNode(true);
 
     clone.querySelector("h1").textContent = anEvent.title.rendered;
-    clone.querySelector(".descript").innerHTML = anEvent.content.rendered;
+    //clone.querySelector(".descript").innerHTML = anEvent.content.rendered;
     clone.querySelector(".event_price span").textContent = anEvent.acf.event_price;
     clone.querySelector(".event_location").textContent = anEvent.acf.event_location;
     clone.querySelector(".event_time").textContent = anEvent.acf.event_time;
-    clone.querySelector(".event_date").textContent = anEvent.acf.event_date;
+    //clone.querySelector(".event_date").textContent = anEvent.acf.event_date;
 
     if (anEvent._embedded["wp:featuredmedia"]) { //img is there
         clone.querySelector("img").setAttribute("src", anEvent._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url)
@@ -35,6 +40,12 @@ function showSingleEvent(anEvent) {
     } else { //no img
         clone.querySelector("img").remove();
     }
+    
+    var year = anEvent.acf.event_date.substring(2, 4);
+    var month = anEvent.acf.event_date.substring(4, 6);
+    var day = anEvent.acf.event_date.substring(6, 8);
+
+    clone.querySelector(".event_date").textContent = day + "/" + month + "/" + year;
 
     clone.querySelector('.readmore').href = "subpage.html?id=" + anEvent.id;
 
