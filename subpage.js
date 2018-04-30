@@ -16,20 +16,15 @@ function showSinglePost(aPost) {
     document.querySelector("#singleEvent h1").textContent = aPost.title.rendered;
 
     //get description
-    document.querySelector(".event-descript").innerHTML = aPost.content.rendered;
+    document.querySelector(".event_descript").innerHTML = aPost.content.rendered;
 
     //get price
-    if (aPost.acf.event_price > 0) {
-        document.querySelector(".event-price span").textContent = aPost.acf.event_price;
-        document.querySelector(".event-free").style.display = "none";
-    } else {
-        document.querySelector(".event-price").style.display = "none";
-    }
+    document.querySelector(".event_price span").textContent = aPost.acf.event_price;
 
  //get images
 
     if (aPost._embedded["wp:featuredmedia"]) { //img is there
-        document.querySelector(".event-pic").setAttribute("src", aPost._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url)
+        document.querySelector("img").setAttribute("src", aPost._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url)
 
     } else { //no img
         document.querySelector(".event-pic").remove();

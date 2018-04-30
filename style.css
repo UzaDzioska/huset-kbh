@@ -26,7 +26,7 @@ html, body {
   padding: 1em;
   position: fixed;
 }
-.menu {
+/*.menu {
   top: var(--header-height);
   height: 100vh;
   width: 100vw;
@@ -36,10 +36,7 @@ html, body {
 .menu.hidden {
   transform: translateX(-100vw);
 }
-.container-fluid {
-  margin: 1em;
-  margin-top: var(--header-height);
-}
+
 .menuIcon {
   height: 30px;
   margin-top: 10px;
@@ -64,6 +61,45 @@ html, body {
 .menuIcon rect.rotateDown {
   transform: rotate(45deg) translate(17px, -14px);
 }
+*/
+
+/* Style the list */
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+.container-fluid {
+  margin: 1em;
+  margin-top: var(--header-height);
+}
+
 #eventlist {
   display: grid;
   grid-template-columns: 1fr;
@@ -82,6 +118,9 @@ html, body {
     grid-template-columns: 1fr 1fr;
   }
 
+    .logo{
+        height: 30px;
+    }
 }
 
 @media (min-width: 1300px)  {
