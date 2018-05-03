@@ -5,40 +5,27 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Are you looking for events in Copenhagen? Visit Denmark’s first and largest culture house and make sure you won't miss the cultural night of your life.">
+  <meta name="keywords" content="events in copenhagen today, cultural events in copenhagen, culture house copenhagen, events copenhagen today, cultural events copenhagen, movie copenhagen, cinema copenhagen, concert copenhagen">
 </head>
 
 <body>
     <header class="appbar">
-        <div class="logo">
-            <?xml version="1.0" encoding="utf-8"?>
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 515.9 728.5" style="enable-background:new 0 0 515.9 728.5;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:none;stroke:url(#SVGID_1_);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:url(#SVGID_2_);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-</style>
-<radialGradient id="SVGID_1_" cx="257.9528" cy="275.6675" r="82.34" gradientUnits="userSpaceOnUse">
-	<stop  offset="0" style="stop-color:#FFFFFF"/>
-	<stop  offset="1" style="stop-color:#000000"/>
-</radialGradient>
-<polyline class="st0" points="170.3,350.7 170.3,200.6 211.1,200.6 211.1,339.4 303.1,339.4 303.1,200.6 345.6,200.6 345.6,350.7
-	"/>
-<radialGradient id="SVGID_2_" cx="257.9528" cy="452.8364" r="82.34" gradientUnits="userSpaceOnUse">
-	<stop  offset="0" style="stop-color:#FFFFFF"/>
-	<stop  offset="1" style="stop-color:#000000"/>
-</radialGradient>
-<polyline class="st1" points="170.3,377.8 170.3,527.9 211.1,527.9 211.1,389.1 303.1,389.1 303.1,527.9 345.6,527.9 345.6,377.8
-	"/>
-</svg>
-        </div>
+        <img id="huset-logo" src="img/h-logo-yellow.svg" alt="huset-logo">
 
-        <ul class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Pictures</a></li>
-            <li><a href="#">Summer 15</a></li>
-            <li>Italy</li>
-        </ul>
+    <div class="nav-background">
+        <nav>
+            <input type="checkbox" id="nav" class="hidden" />
+            <label for="nav" class="nav-open"><i></i><i></i><i></i></label>
+            <div class="nav-container">
+                <ul>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+
     </header>
-
 
 
     <div class="container-fluid">
@@ -46,19 +33,30 @@
             <template id="evttemp">
           <article class="event">
            <h1>TITLE</h1>
-           <img src="" alt="">
-           <h2 class="event_price"><span>PRICE</span>kr</h2>
+           <img class="event_pic" src="" alt="">
+           <h2 class="event_price"><span>PRICE</span> kr</h2>
            <div class="event_date">DATE</div>
            <div class="event_location">LOCATION</div>
            <div class="event_time">TIME</div>
-           <p><a class="readmore" href="subpage.html?id=1">Read more</a></p>
+           <button><a class="readmore" href="subpage.html?id=1">Read more</a></button>
        </article>
        </template>
         </section>
     </div>
 
+    <footer>
+        <div>
+            <img class="icons" src="img/facebook-logo.svg" alt="facebook">
+            <img class="icons" src="img/twitter-logo.svg" alt="twitter">
+            <img class="icons" src="img/iconmonstr-instagram-1.svg" alt="instagram">
+            <img class="icons" src="img/iconmonstr-flickr-3.svg" alt="flickr">
+        </div>
+        <div>
+            <p>HUSET-KBH Rådhusstræde 13 1466 København K Tlf: 21 51 21 51 info@huset-kbh.dk</p>
+        </div>
+    </footer>
     <script src="main.js"></script>
-    <!--<script src="menu.js"></script>-->
+    <script src="menu.js"></script>
 </body>
 
 </html>

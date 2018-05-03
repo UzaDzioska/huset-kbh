@@ -1,131 +1,264 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
-:root {
-  --header-height: 80px;
-}
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
-html, body {
-  margin: 0;
+
+html,
+body {
+    margin: 0;
     font-family: 'Source Sans Pro', sans-serif;
+    width: 100vw;
+    background-color: #9A9495;
 }
-.event {
-  padding: 1.5em;
-  margin: 1em;
+
+p,
+h1,
+h2 {
+    color: white;
+}
+
+div p {
+    color: aliceblue;
 }
 
 .appbar {
-  width: 100vw;
-  height: var(--header-height);
-  top: 0;
-  left:0;
-}
-.appbar, .menu {
-  background: #3A3434;
-  padding: 1em;
-  position: fixed;
-}
-/*.menu {
-  top: var(--header-height);
-  height: 100vh;
-  width: 100vw;
-  transition: all 0.3s 0.3s;
-  color: white;
-}
-.menu.hidden {
-  transform: translateX(-100vw);
-}
-
-.menuIcon {
-  height: 30px;
-  margin-top: 10px;
-  margin-left: 12px;
-}
-.menuIcon rect {
-  fill: white;
-  transition: all 0.6s;
-}
-.menuIcon rect:nth-child(1){
-  transform-origin: left top;
-}
-.menuIcon rect:nth-child(3){
-  transform-origin: left bottom;
-}
-.menuIcon rect.fadeOut {
-  opacity: 0;
-}
-.menuIcon rect.rotateUp {
-  transform: rotate(-45deg) translate(18px, 41px);
-}
-.menuIcon rect.rotateDown {
-  transform: rotate(45deg) translate(17px, -14px);
-}
-*/
-
-/* Style the list */
-ul.breadcrumb {
-    padding: 10px 16px;
-    list-style: none;
-    background-color: #eee;
-}
-
-/* Display list items side by side */
-ul.breadcrumb li {
-    display: inline;
-    font-size: 18px;
-}
-
-/* Add a slash symbol (/) before/behind each list item */
-ul.breadcrumb li+li:before {
-    padding: 8px;
-    color: black;
-    content: "/\00a0";
-}
-
-/* Add a color to all links inside the list */
-ul.breadcrumb li a {
-    color: #0275d8;
-    text-decoration: none;
-}
-
-/* Add a color on mouse-over */
-ul.breadcrumb li a:hover {
-    color: #01447e;
-    text-decoration: underline;
-}
-
-.container-fluid {
-  margin: 1em;
-  margin-top: var(--header-height);
+    width: 100vw;
+    top: 0;
+    left: 0;
+    padding: 1em;
+    position: fixed;
+    background-color: #3A3434;
+    /*z-index: 99;*/
+    margin-bottom: 5em;
 }
 
 #eventlist {
-  display: grid;
-  grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 #singleEvent {
-  transition: all 0.3s;
-  transform: translateX(-100vw)
+    text-align: center;
+    transition: all 0.3s;
+    transform: translateX(-100vw)
 }
-#singleEvent.slideInEvent{
 
-  transform: translateX(0)
+section{
+    color: white;
+    margin-top: 15em;
 }
-@media (min-width: 1000px)  {
-  #eventlist {
-    grid-template-columns: 1fr 1fr;
-  }
 
-    .logo{
-        height: 30px;
+#singleEvent.slideInEvent {
+
+    transform: translateX(0)
+}
+
+.event_pic {
+    width: 100vw;
+}
+
+#huset-logo {
+    height: 10em;
+    padding-left: 1em;
+}
+
+button {
+    width: 70vw;
+    height: 5em;
+    border-radius: 5px;
+    border: .5em solid #EAD01B;
+    margin-top: 1em;
+    background-color: #9A9495;
+
+}
+
+button:active {
+    border: .5em solid #E8D772;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    font-family: Source Sans Pro, sans-serif;
+}
+
+article {
+    text-align: center;
+    margin-bottom: 5em;
+    color: white;
+}
+
+.icons {
+    height: 2em;
+    margin: 1em;
+}
+
+footer {
+    background-color: #3A3434;
+    width: 100vw;
+    font-size: .75em;
+    text-align: center;
+    padding: 1em;
+}
+
+footer p {
+    color: #E8D772;
+}
+
+/*navigation*/
+
+nav ul li a {
+    display: inline-block;
+    outline: none;
+    color: #1f2227;
+    font-size: 1em;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+}
+
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: #3A3434;
+    opacity: 0;
+    display: none;
+    transition: all 0.2s 2.2s ease;
+
+}
+
+.nav-container ul {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.nav-container ul li {
+    display: block;
+    float: none;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.nav-container ul li:nth-child(1) a {
+    transition-delay: 0.2s;
+}
+
+.nav-container ul li:nth-child(2) a {
+    transition-delay: 0.3s;
+}
+
+.nav-container ul li:nth-child(3) a {
+    transition-delay: 0.4s;
+}
+
+.nav-container ul li:nth-child(4) a {
+    transition-delay: 0.5s;
+}
+
+.nav-container ul li:not(:first-child) {
+    margin-left: 0;
+}
+
+.nav-container ul li a {
+    padding: 10px 25px;
+    opacity: 0;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    transform: translateY(-20px);
+    transition: all 0.2s ease;
+}
+
+.nav-open {
+    position: fixed;
+    right: 2em;
+    top: 3em;
+    display: block;
+    /*width: 48px;
+    height:48px;*/
+    cursor: pointer;
+    z-index: 9999;
+    margin-top:0.7em;
+}
+
+.nav-open i {
+    display: block;
+    width: 5em;
+    height: 1em;
+    background: #EAD01B;
+    /*color of burger menu*/
+    border-radius: 2px;
+    margin-left: 14px;
+}
+
+.nav-open i:nth-child(1) {
+    margin-top: 16px;
+}
+
+.nav-open i:nth-child(2) {
+    margin-top: 4px;
+    opacity: 1;
+}
+
+.nav-open i:nth-child(3) {
+    margin-top: 4px;
+}
+
+
+#nav:checked + .nav-open {
+    transform: rotate(45deg);
+}
+
+#nav:checked + .nav-open i {
+    background: #fff;
+    transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav-open i:nth-child(1) {
+    transform: translateY(6px) rotate(180deg);
+}
+
+#nav:checked + .nav-open i:nth-child(2) {
+    opacity: 0;
+}
+
+#nav:checked + .nav-open i:nth-child(3) {
+    transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked ~ .nav-container {
+    z-index: 9990;
+    opacity: 1;
+    display: block;
+}
+
+#nav:checked ~ .nav-container ul li a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none;
+}
+
+@media (min-width: 1000px) {
+    #eventlist {
+        grid-template-columns: 1fr 1fr;
     }
+
 }
 
-@media (min-width: 1300px)  {
-  #eventlist {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+@media (min-width: 1300px) {
+    #eventlist {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 
 }
